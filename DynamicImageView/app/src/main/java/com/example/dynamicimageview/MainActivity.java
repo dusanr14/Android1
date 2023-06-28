@@ -57,13 +57,12 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(MainActivity.this, "Selected column " + elementCol, Toast.LENGTH_SHORT).show();
                     //Toast.makeText(MainActivity.this, "Kliknuo si na sliku "+v.getTag().toString(), Toast.LENGTH_SHORT).show();
                     //Toast.makeText(MainActivity.this, "Matrica: "+write_matrix_row+write_matrix_col, Toast.LENGTH_SHORT).show();
-                    if(turn == 1) {
+                    if(turn == 1 && fallPosition[elementCol-1] != 0) {
                         turn = -1;
                         gameMatrix[write_matrix_row][write_matrix_col] = 1;
-                        images.get(fallPosition[elementCol-1] + "," + elementCol).setImageResource(R.drawable.red);
-                        fallPosition[elementCol-1]--;
-                        gameEnd(gameMatrix, turn);
-                    }else if(turn == -1){
+                        images.get(fallPosition[elementCol - 1] + "," + elementCol).setImageResource(R.drawable.red);
+                        fallPosition[elementCol - 1]--;
+                    }else if(turn == -1 && fallPosition[elementCol-1] != 0){
                         turn = 1;
                         gameMatrix[write_matrix_row][write_matrix_col] = -1;
                         images.get(fallPosition[elementCol-1] + "," + elementCol).setImageResource(R.drawable.blue);
